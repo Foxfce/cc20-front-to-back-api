@@ -9,3 +9,11 @@ npm install express
 ```bash
 npm install cors morgan nodemon
 ``` 
+
+
+## Git
+```bash
+git add .
+git commit -m "message"
+git push
+```

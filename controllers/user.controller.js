@@ -1,6 +1,17 @@
-export const listUser = (req, res) => {
-  // code body
-  res.json({ message: "This is List All Users" });
+import { createError } from "../utils/createError.js";
+
+export const listUser = (req, res, next) => {
+  try {
+    // 1. Check Email
+    if(true){
+      createError(400,'Email already exist!!!')
+    }else{
+      throw new Error("Password is Invalid!!!");
+    }
+    res.json({ message: "This is List All Users" });
+  } catch (error) {
+    next(error);
+  }
 };
 
 export const readUser = (req, res) => {
@@ -12,7 +23,7 @@ export const createUser = (req, res) => {
 };
 
 export const replaceUser = (req, res) => {
-  const {id} = req.params
+  const { id } = req.params
   res.json({ message: `This is Replace User id = ${id}` });
 };
 
